@@ -2,6 +2,8 @@ import React from 'react';
 
 const Burger = (props) => {
     const {image, name, price, desc, status} = props.details
+    const isAvailable = status === 'available'
+
     return (
         <li className='menu-burger'>
             <div className='image-container'>
@@ -15,8 +17,8 @@ const Burger = (props) => {
                 <p>
                     {desc}
                 </p>
-                <button className='buttonOrder'>
-                    Заказать
+                <button className='buttonOrder' disabled={!isAvailable} onClick={() => props.addToOrder(props.index)}>
+                    {isAvailable ? 'Зказать' : 'недоступен'}
                 </button>
             </div>
         </li>

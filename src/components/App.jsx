@@ -25,6 +25,14 @@ class App extends React.Component {
 
     }
 
+    addToOrder = (key) => {
+        const order = {...this.state.order}
+        // !order[index] ? order[index] = 1 : order[index]++
+        order[key] = ++order[key] || 1
+        this.setState({order})
+
+    }
+
     render() {
         return (
             <div className='burger-paradise'>
@@ -36,6 +44,7 @@ class App extends React.Component {
                                 key={key}
                                 index={key}
                                 details={this.state.burgers[key]}
+                                addToOrder={this.addToOrder}
                             />)}
                     </ul>
                 </div>
