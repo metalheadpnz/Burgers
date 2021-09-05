@@ -19,7 +19,7 @@ class App extends React.Component {
 
     loadSampleBurgers = () => {
         // const burgers = {...this.state.burgers, ...sampleBurgers};
-        // this.setState({burgers})
+        // this.setState({burgers})??
 
         this.setState({burgers: sampleBurgers})
 
@@ -27,7 +27,6 @@ class App extends React.Component {
 
     addToOrder = (key) => {
         const order = {...this.state.order}
-        // !order[index] ? order[index] = 1 : order[index]++
         order[key] = ++order[key] || 1
         this.setState({order})
 
