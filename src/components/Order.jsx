@@ -1,5 +1,6 @@
 import React from 'react'
 import Shipment from "./Shipment";
+import {onLog} from "firebase";
 
 class Order extends React.Component {
 
@@ -23,7 +24,9 @@ class Order extends React.Component {
                     <span>{count}</span>
                     шт. {burger.name}
                     <span> {count * burger.price} ₽</span>
-                    <button className='cancelItem'>&times;</button>
+                    <button
+                        onClick={() => this.props.deleteFromOrder(key)}
+                        className='cancelItem'>&times;</button>
                 </span>
             </li>
         )

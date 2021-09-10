@@ -12,6 +12,7 @@ class MenuAdmin extends React.Component {
                                     key={key}
                                     index={key}
                                     updateBurger={this.props.updateBurger}
+                                    deleteBurger = {this.props.deleteBurger}
                     />)}
                 <AddBurgerForm addBurger={this.props.addBurger}/>
                 <button onClick={this.props.loadSampleBurgers}>Загрузить бургеры</button>
